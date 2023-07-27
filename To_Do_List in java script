@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body 
+{
+    background-color:midnightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contanioer
+
+{
+    height: 300px;
+    width: 350px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    box-shadow: 3px 5px 10px coral;
+    /* background-color: midnightblue; */
+}
+input
+{
+    height: 40px;
+    width: 250px;
+    border: 2px solid rgb(6, 145, 145);
+    outline: none;
+    /* padding:00px; */
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 10px;
+}
+button
+{
+    height: 40px;
+    width: 70px;
+    border: 2px solid coral;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:rgb(4, 29  , 29) ;
+    /* background-color: rgba(00, 00, 00, 0.5); */
+}
+.text 
+{
+    font-size: 40px;
+    width: 100%;
+    height: auto;
+    color: whitesmoke;
+    border: 1px solid #000;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+        <div class="contanioer">
+            <div class="inputs">
+                <input type="text" id="inp" placeholder="add me">
+                <button onclick="add()">add</button>
+            </div>
+            <div class="text"></div>
+        </div>
+
+        <script >
+
+let inputs = document.getElementById("inp");
+
+let text = document.querySelector(".text");
+
+function add()
+{
+    if(inputs.value == "")
+    {
+        alert("this box is empty");
+    }
+    else
+    {
+        let newele = document.createElement("ul");
+        newele.innerHTML = `${inputs.value}`;
+        text.appendChild(newele);
+        inputs.value = "";
+    }
+}
+        </script>
+</body>
+</html>
